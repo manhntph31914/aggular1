@@ -1,0 +1,10 @@
+.menu-item{position: relative;}
+.menu-item .submenu{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    display: none;
+}
+.menu-item:hover .submenu{
+    display: block;
+}

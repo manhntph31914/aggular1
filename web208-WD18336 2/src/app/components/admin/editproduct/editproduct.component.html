@@ -1,0 +1,40 @@
+<p-toast />
+<p-confirmDialog />
+<div class="bg-gray-100 py-6 flex justify-center">
+    <div class="w-full max-w-lg bg-white rounded-lg shadow-md p-6">
+        <h1 class="text-2xl font-bold mb-4">Sửa sản phẩm</h1>
+        <form [formGroup]="productform" (ngSubmit)="onSubmit($event)" class="space-y-4">
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700">Tên sản phẩm</label>
+                <input id="name" type="text" placeholder="Tên sản phẩm" formControlName="name"
+                    class="mt-1 block w-full border border-gray-300 p-2 rounded-md" />
+                <span class="text-red-600 text-[12px]"
+                    *ngIf="!productform.controls.name.valid&&(productform.controls.name.dirty||productform.controls.name.touched)">Tên
+                    không được để trống và > 6 kí tự</span>
+            </div>
+
+            <div>
+                <label for="image" class="block text-sm font-medium text-gray-700">Ảnh sản phẩm</label>
+                <input id="image" type="text" placeholder="Ảnh sản phẩm" formControlName="image"
+                    class="mt-1 block w-full border border-gray-300 p-2 rounded-md" />
+            </div>
+
+            <div>
+                <label for="cat_id" class="block text-sm font-medium text-gray-700">Danh mục</label>
+                <select id="cat_id" formControlName="cat_id"
+                    class="mt-1 block w-full border border-gray-300 p-2 rounded-md">
+                    <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="price" class="block text-sm font-medium text-gray-700">Giá sản phẩm</label>
+                <input id="price" type="number" placeholder="Giá sản phẩm" formControlName="price"
+                    class="mt-1 block w-full border border-gray-300 p-2 rounded-md" />
+            </div>
+
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Sửa sản
+                phẩm</button>
+        </form>
+    </div>
+</div>

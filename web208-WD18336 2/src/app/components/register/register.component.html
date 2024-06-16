@@ -1,0 +1,37 @@
+<form [formGroup]="registerform" (ngSubmit)="onSubmit()"
+    class="space-y-4 bg-white p-6 rounded shadow-md max-w-md mx-auto">
+    <div>
+        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+        <input id="name" type="text" placeholder="Name" formControlName="name"
+            class="mt-1 block w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:border-blue-500" />
+        <span
+            *ngIf="!registerform.controls.name.valid && (registerform.controls.name.dirty || registerform.controls.name.touched)"
+            class="text-red-500 text-sm mt-1">
+            Tên không để trống
+        </span>
+    </div>
+    <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input id="email" type="text" placeholder="Email" formControlName="email"
+            class="mt-1 block w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:border-blue-500" />
+        <span
+            *ngIf="!registerform.controls.email.valid && (registerform.controls.email.dirty || registerform.controls.email.touched)"
+            class="text-red-500 text-sm mt-1">
+            Sai định dạng email
+        </span>
+    </div>
+    <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <input id="password" type="password" placeholder="Password" formControlName="password"
+            class="mt-1 block w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:border-blue-500" />
+        <span
+            *ngIf="!registerform.controls.password.valid && (registerform.controls.password.dirty || registerform.controls.password.touched)"
+            class="text-red-500 text-sm mt-1">
+            Mật khẩu không nhỏ hơn 6 kí tự
+        </span>
+    </div>
+    <button type="submit" [disabled]="!registerform.valid"
+        class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-cyan-400 disabled:bg-gray-400">
+        Đăng kí
+    </button>
+</form>

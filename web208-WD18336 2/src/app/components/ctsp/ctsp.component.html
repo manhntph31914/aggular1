@@ -1,0 +1,270 @@
+<div class="w-full">
+    <div
+        class="w-full bg-white overflow-hidden flex flex-col items-start justify-start pt-5 px-0 pb-0 gap-5 leading-normal tracking-normal text-left text-gray-700 font-poppins">
+        <main
+            class="self-stretch flex flex-col items-end justify-start gap-5 max-w-full text-left text-sm text-darkslategray-600 font-poppins">
+            <section
+                class="self-stretch flex flex-row items-start justify-end py-0 pr-5 pl-5 gap-5 max-w-full text-left text-lg-2 text-gray-700 font-poppins">
+                <div
+                    class="flex-1 flex flex-col items-end justify-start gap-[64px] max-w-full mq450:gap-[16px] mq800:gap-[32px]">
+                    <div
+                        class="self-stretch flex flex-row items-start justify-end pt-0 pb-[11px] pr-px pl-[3px] box-border max-w-full">
+                        <div
+                            class="flex-1 flex flex-row items-end justify-start gap-[48px] max-w-full mq800:gap-[24px] mq1325:flex-wrap">
+                            <div
+                                class="flex-1 flex flex-col items-start justify-end pt-0 px-0 pb-px box-border min-w-[421px] max-w-full mq800:min-w-full">
+                                <div *ngIf="productDetail" class="self-stretch h-[743px] relative">
+                                    <img class="absolute top-[0px] left-[0px] rounded-xl w-[647px] h-[561px] object-cover"
+                                        loading="lazy" alt="" src="{{productDetail.image}}" />
+
+                                    <img class="[border:none] bg-[transparent] h-[157px] w-[310px] [outline:none] absolute top-[586px] left-[0px] rounded-xl overflow-hidden object-contain"
+                                        rows="{8}" cols="{16}" alt="" src="{{productDetail.image}}" />
+                                </div>
+                            </div>
+                            <div
+                                class="w-[619px] flex flex-col items-start justify-start gap-[25px] min-w-[619px] max-w-full mq800:min-w-full mq1325:flex-1">
+                                <div
+                                    class="flex items-start justify-start pt-4 pb-3.5 pr-0 pl-1 border-t border-solid border-gray-200">
+                                    <div class="flex-1">
+                                        <div class="flex flex-col items-start gap-4">
+                                            <div *ngIf="productDetail">
+                                                <h2 class="text-xl font-semibold text-gray-800">{{ productDetail.name }}
+                                                </h2>
+                                                <p class="text-lg font-medium text-gray-600">Price: {{
+                                                    productDetail.price }}</p>
+                                            </div>
+
+                                            <div class="relative text-sm text-gray-400">Hurry up! Only 34 products left
+                                                in stock!</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="self-stretch flex flex-row items-start justify-start py-0 pr-1 pl-px box-border max-w-full">
+                                    <div
+                                        class="flex-1 flex flex-col items-start justify-center gap-[42px] max-w-full mq800:gap-[21px]">
+                                        <div
+                                            class="w-[373.3px] flex flex-col items-start justify-center gap-[26px] max-w-full">
+
+                                            <div
+                                                class="self-stretch flex flex-row items-center justify-center gap-[19.1px] text-darkslategray-200 mq450:flex-wrap">
+                                                <div
+                                                    class="relative font-medium text-gray-700 inline-block min-w-[45px]">
+                                                    Size :
+                                                </div>
+                                                <div
+                                                    class="flex-1 bg-whitesmoke-300 box-border flex flex-row items-center justify-center py-px px-[19px] min-w-[25px] border-[1px] border-solid border-black">
+                                                    <div class="flex flex-row items-center justify-center">
+                                                        <div class="relative font-medium inline-block min-w-[23px]">
+                                                            30
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="flex-1 bg-whitesmoke-300 flex flex-row items-center justify-center py-[2.5px] px-[19px] box-border min-w-[25px]">
+                                                    <div class="flex-1 flex flex-row items-center justify-center">
+                                                        <div class="relative font-medium inline-block min-w-[24px]">
+                                                            56
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="flex-1 bg-whitesmoke-300 flex flex-row items-center justify-center py-[2.5px] px-5 box-border min-w-[25px]">
+                                                    <div class="flex flex-row items-center justify-center">
+                                                        <div class="relative font-medium inline-block min-w-[23px]">
+                                                            42
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="flex-1 bg-whitesmoke-300 flex flex-row items-center justify-center py-[2.5px] px-[19px] box-border min-w-[25px]">
+                                                    <div class="flex-1 flex flex-row items-center justify-center">
+                                                        <div class="relative font-medium inline-block min-w-[24px]">
+                                                            48
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div *ngFor="let product of products"
+                                                class="w-[241.1px] flex flex-row items-center justify-center gap-[19.1px]">
+                                                <div class="relative font-medium inline-block min-w-[89px]">
+                                                    Quantity :{{product.price}}
+                                                </div>
+                                                <div
+                                                    class="flex-1 flex flex-row items-center justify-center text-darkslategray-200">
+                                                    <div
+                                                        class="w-[35px] bg-whitesmoke-300 box-border flex flex-row items-center justify-center py-px px-[11px] border-[1px] border-solid border-silver-300">
+                                                        <div class="flex flex-row items-center justify-center">
+                                                            <div class="relative font-medium inline-block min-w-[11px]">
+                                                                -
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="flex-1 bg-whitesmoke-300 flex flex-row items-center justify-center py-px px-[27px] border-[1px] border-solid border-silver-300">
+                                                        <div class="flex flex-row items-center justify-center">
+                                                            <div class="relative font-medium inline-block min-w-[7px]">
+                                                                1
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="w-[35px] bg-whitesmoke-300 box-border flex flex-row items-center justify-center py-px px-2.5 border-[1px] border-solid border-silver-300">
+                                                        <div class="flex flex-row items-center justify-center">
+                                                            <div class="relative font-medium inline-block min-w-[13px]">
+                                                                +
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="self-stretch flex flex-row items-center justify-center gap-[29px] mq800:flex-wrap">
+                                            <button
+                                                class=" bg-[#EDA415] cursor-pointer [border:none] py-[19.5px] px-14 bg-b flex-1 rounded-[32.42px] flex flex-row items-center justify-center box-border min-w-[157px] whitespace-nowrap hover:bg-darkgoldenrod">
+                                                <div
+                                                    class="relative text-3xl-7 font-semibold font-poppins text-white text-left inline-block min-w-[129px]">
+                                                    Add to cart
+                                                </div>
+                                            </button>
+                                            <button
+                                                class="bg-[#EDA415] cursor-pointer [border:none] py-[19.5px] px-[61px] bg-b flex-[0.9225] rounded-[32.42px] flex flex-row items-center justify-center box-border min-w-[157px] whitespace-nowrap hover:bg-darkgoldenrod mq450:flex-1">
+                                                <div
+                                                    class="relative text-3xl-7 font-semibold font-poppins text-white text-left inline-block min-w-[118px]">
+                                                    Buy it now
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="self-stretch flex flex-col items-start justify-start gap-[14px] max-w-full">
+                                    <div
+                                        class="self-stretch h-px flex flex-row items-start justify-start py-0 pr-0 pl-px box-border max-w-full">
+                                        <div
+                                            class="self-stretch flex-1 relative box-border max-w-full border-t-[1px] border-solid border-silver-300">
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-start justify-center gap-[31px] mq450:gap-[15px]">
+                                        <!-- <div class="flex flex-row items-center justify-center gap-[19.1px]">
+                                            <div class="relative font-medium inline-block min-w-[38px]">
+                                                Sku:
+                                            </div>
+                                            <div
+                                                class="flex flex-row items-center justify-center text-darkslategray-200">
+                                                <div class="relative font-medium inline-block min-w-[91px]">
+                                                    01133-9-9
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div *ngFor="let product of products"
+                                            class="flex flex-row items-center justify-center gap-[19.1px] mq450:flex-wrap">
+                                            <div class="relative font-medium inline-block min-w-[91px]">
+                                                Category:{{ product.cat_id}}
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="self-stretch flex flex-row items-start justify-end py-0 pr-px pl-[3px] box-border max-w-full text-3xl-7 text-a">
+                        <div
+                            class="flex-1 flex flex-col items-start justify-start gap-[35px] max-w-full mq800:gap-[17px]">
+                            <div
+                                class="self-stretch flex flex-row items-start justify-center py-0 px-5 box-border max-w-full">
+                                <div
+                                    class="flex flex-row items-start justify-start gap-[20px] max-w-full mq800:flex-wrap">
+                                    <button
+                                        class="cursor-pointer py-[13px] px-[33px] bg-[transparent] rounded-xl flex flex-row items-start justify-start border-[1px] border-solid border-gray-200 hover:bg-gray-900 hover:box-border hover:border-[1px] hover:border-solid hover:border-gray-500">
+                                        <div
+                                            class="relative text-xl-7 font-medium font-poppins text-darkslategray-400 text-left inline-block min-w-[119px] mq450:text-mid">
+                                            Description
+                                        </div>
+                                    </button>
+                                    <button
+                                        class="cursor-pointer [border:none] py-[14.5px] px-[51px] bg-a rounded-xl flex flex-row items-start justify-start border-[1px] border-solid border-gray-200 hover:bg-gray-900 hover:box-border hover:border-[1px] hover:border-solid hover:border-gray-500">
+                                        <div
+                                            class="text-black relative text-xl-7 font-medium font-poppins text-left inline-block min-w-[85px] mq450:text-mid">
+                                            Reviews
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div
+                                class="self-stretch rounded-xl flex flex-col items-start justify-start py-[41px] pr-5 pl-[49px] gap-[17px] border-[1px] border-solid border-silver-500 mq450:pl-5 mq450:box-border">
+                                <div class="h-[34px] relative font-semibold inline-block mq450:text-lg">
+                                    Customer reviews
+                                </div>
+                                <div class="relative text-lgi-7 text-dimgray-400">
+                                    No reviews yet
+                                </div>
+                                <button
+                                    class="cursor-pointer [border:none] py-[5px] px-7 bg-a flex flex-row items-start justify-start whitespace-nowrap hover:bg-steelblue-200">
+                                    <div
+                                        class="relative text-lgi-7 [text-decoration:underline] font-poppins text-white text-left">
+                                        Write a review
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="self-stretch h-[407.7px] flex flex-col items-start justify-start gap-[53px] max-w-full text-8xl-4 text-steelblue-600 mq800:gap-[26px]">
+                        <div class="relative font-semibold mq450:text-3xl">
+                            Related product
+                        </div>
+                        <div
+                            class="self-stretch flex-1 flex flex-row items-start justify-start py-0 pr-0 pl-[3px] box-border max-w-full text-mid-1 text-a">
+                            <div
+                                class="self-stretch flex-1 overflow-x-auto flex flex-row items-start justify-start gap-[26.6px] max-w-full">
+                                <!--  -->
+
+
+                                <div *ngFor=" let product of products"
+                                    class="w-[308.8px] rounded-[19.67px] box-border shrink-0 flex flex-col items-start justify-start py-[21px] pr-3 pl-[13px] gap-[2px] border-[1px] border-solid border-silver-600">
+                                    <div
+                                        class="self-stretch overflow-hidden flex flex-row items-start justify-end w-[40px]">
+                                        <img src="{{product.image}}">
+                                        <div
+                                            class="h-[27.5px] w-[27.5px] rounded-103xl-4 bg-lightblue flex flex-row items-center justify-center">
+                                            <img class="bg-[#B3D4E5] h-[14.7px] w-[14.7px] relative" alt=""
+                                                src="../assets/vuesax/linear/Vector.png" />
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col items-start justify-start gap-[15.8px]">
+                                        <div class="relative font-medium">{{product.name}}</div>
+                                        <div
+                                            class="relative font-semibold text-darkslategray-100 inline-block min-w-[49px] whitespace-nowrap">
+                                            {{product.price}}$
+                                        </div>
+                                        <div class="flex flex-row items-start justify-start gap-[10.9px]">
+                                            <img class="h-[14.6px] w-[14.7px] relative min-h-[15px]" alt=""
+                                                src="../assets/start.png" />
+
+                                            <img class="h-[14.6px] w-[14.7px] relative min-h-[15px]" alt=""
+                                                src="../assets/start.png" />
+
+                                            <img class="h-[14.6px] w-[14.7px] relative min-h-[15px]" alt=""
+                                                src="../assets/start.png" />
+
+                                            <img class="h-[14.6px] w-[14.7px] relative min-h-[15px]" alt=""
+                                                src="../assets/start.png" />
+
+                                            <img class="h-[14.6px] w-[14.7px] relative min-h-[15px]" alt=""
+                                                src="../assets/start.png" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+</div>

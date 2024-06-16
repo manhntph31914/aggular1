@@ -1,0 +1,50 @@
+<p-toast />
+<p-confirmDialog />
+<div class="p-8 bg-gray-100">
+
+    <h1 class="text-2xl font-bold mb-4">Thêm mới sản phẩm</h1>
+    <form [formGroup]="productform" (ngSubmit)="onSubmit($event)" class="space-y-4 bg-white p-6 rounded shadow-md">
+        <div>
+            <label for="name" class="block text-sm font-medium text-gray-700">Tên sản phẩm</label>
+            <input id="name" type="text" placeholder="Tên sản phẩm" formControlName="name"
+                class="mt-1 block w-full border border-gray-300 p-2 rounded-md" />
+            <span class="text-red-600 text-sm"
+                *ngIf="productform.controls.name.invalid && (productform.controls.name.dirty || productform.controls.name.touched)">
+                Tên không được để trống và phải lớn hơn 6 kí tự
+            </span>
+        </div>
+        <div>
+            <label for="image" class="block text-sm font-medium text-gray-700">Ảnh sản phẩm</label>
+            <input id="image" type="text" placeholder="Ảnh sản phẩm" formControlName="image"
+                class="mt-1 block w-full border border-gray-300 p-2 rounded-md" />
+            <span class="text-red-600 text-sm"
+                *ngIf="productform.controls.image.invalid && (productform.controls.image.dirty || productform.controls.image.touched)">
+                Ảnh sản phẩm là bắt buộc
+            </span>
+        </div>
+        <div>
+            <label for="cat_id" class="block text-sm font-medium text-gray-700">Danh mục</label>
+            <select id="cat_id" formControlName="cat_id"
+                class="mt-1 block w-full border border-gray-300 p-2 rounded-md">
+                <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+            </select>
+            <span class="text-red-600 text-sm"
+                *ngIf="productform.controls.cat_id.invalid && (productform.controls.cat_id.dirty || productform.controls.cat_id.touched)">
+                Danh mục là bắt buộc
+            </span>
+        </div>
+        <div>
+            <label for="price" class="block text-sm font-medium text-gray-700">Giá sản phẩm</label>
+            <input id="price" type="number" placeholder="Giá sản phẩm" formControlName="price"
+                class="mt-1 block w-full border border-gray-300 p-2 rounded-md" />
+            <span class="text-red-600 text-sm"
+                *ngIf="productform.controls.price.invalid && (productform.controls.price.dirty || productform.controls.price.touched)">
+                Giá sản phẩm phải lớn hơn 2000
+            </span>
+        </div>
+        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Thêm sản phẩm</button>
+    </form>
+
+
+
+</div>

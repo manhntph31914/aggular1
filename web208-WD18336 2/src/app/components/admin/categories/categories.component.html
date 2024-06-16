@@ -1,0 +1,17 @@
+<p-toast />
+<p-confirmDialog />
+
+<body class="bg-gray-100 py-6 flex justify-center">
+    <div class="w-full max-w-lg bg-white rounded-lg shadow-md p-6">
+        <h1 class="text-2xl font-bold mb-4">Sửa Danh Mục</h1>
+        <form [formGroup]="categoryForm" (ngSubmit)="onSubmitCategory($event)" class="space-y-4">
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700">Tên danh mục</label>
+                <input id="name" type="text" placeholder="Tên danh mục" formControlName="name"
+                    class="mt-1 block w-full border border-gray-300 p-2 rounded-md" />
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Thêm danh
+                mục</button>
+        </form>
+    </div>
+</body>
